@@ -78,7 +78,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await wait_message.delete()
         
     except Exception as e:
-        await wait_message.edit_text(f"{get_str(context, 'error')} {str(e)}")
+        # Xatolikni batafsilroq ko'rsatish (debug uchun)
+        error_msg = f"{get_str(context, 'error')}\n\n🔍 Detallar: {str(e)}"
+        await wait_message.edit_text(error_msg)
+        print(f"DEBUG ERROR: {str(e)}")
     finally:
         if 'file_path' in locals() and file_path and os.path.exists(file_path):
             os.remove(file_path)
