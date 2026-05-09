@@ -1,0 +1,8 @@
+python-telegram-bot==21.5
+yt-dlp
+fastapi
+uvicorn[standard]
+python-dotenv
+httpx
+aiofiles
+python-multipart
