@@ -1,12 +1,17 @@
-# 🎬 YouTube Downloader Telegram Bot
+# 🎬 YouTube Shorts Downloader Bot
 
-Ushbu bot YouTube videolarini yuklab olish uchun mo'ljallangan. 
+Ushbu bot faqat YouTube Shorts videolarini yuklab olish uchun mo'ljallangan. 
+
+## ✨ Xususiyatlari
+- **Multilingual**: O'zbek, Rus va Ingliz tillari qo'llab-quvvatlanadi.
+- **Shorts Focus**: Shorts havolalarini avtomatik taniydi va eng yuqori sifatda yuklaydi.
+- **Fast & Light**: Render-da webhook rejimida ishlashga moslashgan.
 
 ## 🚀 Texnologiyalar
 - **Python 3.10+**
-- **python-telegram-bot** (Bot framework)
-- **yt-dlp** (Video yuklovchi)
-- **FastAPI** (Webhook server)
+- **python-telegram-bot**
+- **yt-dlp**
+- **FastAPI**
 
 ## 🛠 O'rnatish (Local)
 
@@ -16,32 +21,20 @@ git clone <your-repo-url>
 cd "You tube downloder bot"
 ```
 
-2. Virtual muhit yarating va kutubxonalarni o'rnating:
+2. `.env` fayliga tokeningizni yozing:
+```env
+BOT_TOKEN=8758685741:AAGH2jDIP1OU9OeQjg5Rjznr3d2JeBC8z3o
+```
+
+3. Kutubxonalarni o'rnating:
 ```bash
-python -m venv venv
-source venv/bin/activate  # Windows uchun: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. `.env` faylini yarating va quyidagilarni qo'shing:
-```env
-BOT_TOKEN=BotFather_dan_olingan_token
-WEBHOOK_URL=https://sizning-domen.com/webhook
-```
-
-4. Botni ishga tushiring:
+4. Ishga tushiring:
 ```bash
 python main.py
 ```
 
-## 🌍 Render.com ga Deploy qilish
-
-1. GitHub-da yangi repozitoriya oching va kodni yuklang.
-2. Render.com ga kiring va GitHub repongizni ulang.
-3. **Web Service** sifatida yarating.
-4. Environment Variables bo'limiga `BOT_TOKEN` va `WEBHOOK_URL` ni qo'shing.
-5. Deploy muvaffaqiyatli yakunlangach, Telegram botingizga webhook-ni ulash uchun quyidagi havolaga brauzerda kiring:
-`https://api.telegram.org/bot<BOT_TOKEN>/setWebhook?url=https://your-app-name.onrender.com/webhook`
-
-## ⚠️ Muhim
-Telegram botlari uchun fayl hajmi limiti **50MB**. Agar video hajmi bundan katta bo'lsa, bot xatolik qaytaradi.
+## 🌍 Deploy
+Render.com-da Web Service oching, GitHub-ni ulang va env o'zgaruvchilarni sozlang. Webhook ulanishini unutmang!
